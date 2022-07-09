@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Сокращение{% endblock %}
+{% block content %}
+<div class='position'>
+    <h1>Сокращение ссылок</h1>
+    <div id='form' class='form'>
+        <form method="post">
+            {% csrf_token %}
+            <p>{{ form.long_link }}</p>
+            <button type="submit">Сократить</button>
+        </form>
+    </div>
+    <div>{% if cut_link %}
+        <p>Ваша ссылка:
+        <a href={{ cut_link }}>{{ cut_link }}</a>
+        </p>
+        {% elif error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}
