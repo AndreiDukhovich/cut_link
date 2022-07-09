@@ -2,6 +2,7 @@
 {% block title %}Сокращение{% endblock %}
 {% block content %}
 <div class='position'>
+    {% if user.is_authenticated %}
     <h1>Сокращение ссылок</h1>
     <div id='form' class='form'>
         <form method="post">
@@ -18,5 +19,8 @@
         <p>{{ error }}</p>
     {% endif %}
     </div>
+    {% else %}
+        <h1>Войдите, пожалуйста</h1>
+    {% endif %}
 </div>
 {% endblock %}

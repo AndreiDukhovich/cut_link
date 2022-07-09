@@ -2,17 +2,21 @@
 {% block title %}Ваши ссылки{% endblock %}
 {% block content %}
 <div class='position'>
-<div class='list'>
-<h2>Выши ссылки</h2>
-<div class='elem_list'>
-{% for link in links %}
-<div class='links'>
-    <p><a href={{ link.cut_link }}>{{ link.cut_link }}</a></p>
-    <p><a href={{ link.long_link }}>{{ link.long_link }}</a></p>
-</div>
-{% endfor %}
-</div>
-</div>
+    {% if user.is_authenticated %}
+    <div class='list'>
+    <h2>Выши ссылки</h2>
+    <div class='elem_list'>
+    {% for link in links %}
+    <div class='links'>
+        <p><a href={{ link.cut_link }}>{{ link.cut_link }}</a></p>
+        <p><a href={{ link.long_link }}>{{ link.long_link }}</a></p>
+    </div>
+    {% endfor %}
+    </div>
+    {% else %}
+        <h1>Войдите, пожалуйста</h1>
+    {% endif %}
+    </div>
 {% endblock %}
 
 

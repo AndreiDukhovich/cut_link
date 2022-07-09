@@ -17,11 +17,7 @@
     {% endif %}
 </header>
 <div class = 'main'>
-    {% if user.is_authenticated %}
-        {% block content%}{% endblock %}
-    {% else %}
-        <h1>Войдите, пожалуйста</h1>
-    {% endif %}
+    {% block content%}{% endblock %}
 </div>
 <div class='fixElem bottom'>
 <a href="{% url 'login' %}">Войти</a>
