@@ -24,7 +24,7 @@ def get_cut_link(request):
 # Create your views here.
 def list(request):
     links = ''
-    if request.user:
+    if request.user.is_authenticated:
         links = Users_link.objects.filter(user=request.user)
     return render(request, 'main/list.html', {'links': links})
 
