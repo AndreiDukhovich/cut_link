@@ -6,22 +6,24 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-<header class='fixElem top'>
-    <a href="{% url 'main' %}">Сократить</a>
-    <a href="{% url 'list' %}">Список ссылок</a>
-    {% if not user.is_authenticated %}
-      <p><a href="{% url 'login' %}">Войти</a> или <a href="{% url 'registration' %}">Зарегистрироваться</a></p>
-    </header>
-    {% else %}
-      <p>Привет, {{ user.first_name }}.</p>
-    {% endif %}
+<header class='topAndBot top'>
+  <div class='fixElem'>
+    <a class='headLink' href="{% url 'main' %}">Сократить</a>
+    <a class='headLink' href="{% url 'list' %}">Список ссылок</a>
+  </div>
 </header>
 <div class = 'main'>
     {% block content%}{% endblock %}
 </div>
-<div class='fixElem bottom'>
-<a href="{% url 'login' %}">Войти</a>
-<a href="{% url 'registration' %}">Зарегистрироваться</a>
+<div class='topAndBot bottom'>
+  <div class='fixElem'>
+{% if not user.is_authenticated %}
+  <a href="{% url 'login' %}">Войти</a>
+{% else %}
+  <a href="{% url 'logout' %}">Выйти</a>
+{% endif %}
+<a href="{% url 'registration' %}">Создать нового пользователя</a>
+  </div>
 </div>
 </body>
 </html>

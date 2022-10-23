@@ -1,0 +1,7 @@
+{% extends 'base.html'%}
+{% block title%}Вход{% endblock %}
+{% block content %}
+<div class='position'>
+<h1><a href="{% url 'login' %}">Войдите</a> или <a href="{% url 'logout' %}">зарегистрируйтесь</a>.</h1>
+</div>
+{% endblock %}

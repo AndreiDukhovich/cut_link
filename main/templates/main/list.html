@@ -6,12 +6,20 @@
     <div class='list'>
     <h2>Выши ссылки</h2>
     <div class='elem_list'>
+    <table class='links'>
+        <th>Название</th>
+        <th>Сокращенная ссылка</th>
+        <th>Полная ссылка</th>
+        <th>QR-код</th>
     {% for link in links %}
-    <div class='links'>
-        <p><a href={{ link.cut_link }}>{{ link.cut_link }}</a></p>
-        <p><a href={{ link.long_link }}>{{ link.long_link }}</a></p>
-    </div>
+        <tr>
+        <td>{{ link.name }}</td>
+        <td><a href={{ link.cut_link }}>{{ link.cut_link }}</a></td>
+        <td><a href={{ link.long_link }}>{{ link.long_link }}</a></td>
+        <td><img src="/{{ link.qr }}" title="/{{ link.qr }}"></td>
+        </tr>
     {% endfor %}
+    </table>
     </div>
     {% else %}
         <h1>Войдите, пожалуйста</h1>
