@@ -5,7 +5,6 @@
     {% if user.is_authenticated %}
     <div class='list'>
     <h2>Выши ссылки</h2>
-    <div class='elem_list'>
     <table class='links'>
         <th>Название</th>
         <th>Сокращенная ссылка</th>
@@ -20,11 +19,11 @@
         </tr>
     {% endfor %}
     </table>
-    </div>
     {% else %}
         <h1>Войдите, пожалуйста</h1>
     {% endif %}
     </div>
+</div>
 {% endblock %}
 
 

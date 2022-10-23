@@ -7,8 +7,22 @@ h1 a {
     color: black;
 }
 
+table {
+    width: 100%;
+    margin: 0 auto;
+}
+
+table a {
+    display: inline-block;
+    max-width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
 .topAndBot {
-    position: absolute;
+    position: fixed;
     background-color: rgb(255, 102, 0);
     width: 100%;
     left: 0;
@@ -50,11 +64,12 @@ h1 {
     font-size: 50px;
 }
 .main {
-    width: 50%;
-    margin: 50px auto 0 auto;
+    width: 100%;
+    margin: 50px auto 50px auto;
 }
 .position {
     text-align: center;
+    
 }
 .registration {
     font-size: 20px;
@@ -63,21 +78,12 @@ h1 {
     margin: 5px auto;
 }
 
-.links {
-    height: 100px;
-    width: 100%;
-    margin-bottom: 5px;
-}
-.links p {
-    margin-top: 5px;
-}
-
 .LogIn {
     margin: 0 auto;
 }
 
 img {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 }
 
