@@ -11,13 +11,6 @@
             <button type="submit">Сократить</button>
         </form>
     </div>
-    <div>{% if cut_link %}
-        <p>Ваша ссылка:
-        <a href={{ cut_link }}>{{ cut_link }}</a>
-        </p>
-        {% elif error %}
-        <p>{{ error }}</p>
-    {% endif %}
-    </div>
+    <div>{{ mes }}</div>
 </div>
 {% endblock %}

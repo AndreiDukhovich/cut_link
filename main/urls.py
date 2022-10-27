@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     path('list/', views.list, name='list'),
-    path('', views.main, name='main'),
+    path('', views.create_cut_link, name='main'),
     path('<str:link>', views.redir, name='redirect'),
     path('loginplease/', views.loginplease, name='loginplease'),
     path('accounts/', include('django.contrib.auth.urls')),
